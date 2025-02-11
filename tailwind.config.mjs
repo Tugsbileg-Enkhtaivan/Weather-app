@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        title: ["Manrope","serif"]
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

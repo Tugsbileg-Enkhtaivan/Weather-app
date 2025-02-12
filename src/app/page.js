@@ -1,6 +1,10 @@
 import Image from "next/image";
 import SunIcon from "/public/icon.png";
 import SunShadow from "/public/shadow.png";
+import { Search } from "./components/search";
+import { LocationIcon } from "./components/LocationIcon";
+import { SunContainer } from "./components/SunContainer";
+import { Date } from "./components/date";
 
 export default function Home() {
   return (
@@ -12,80 +16,22 @@ export default function Home() {
         <div className="w-full flex">
           <div className="bg-[#F3F4F6] w-1/2 flex flex-col items-center">
             {/* search */}
-            <div className="bg-white flex items-center gap-4 rounded-[48px] shadow-2xl w-[73%] py-4 px-6 overflow-hidden m-10 z-10">
-              <svg
-                className="w-10 h-10"
-                viewBox="0 0 48 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="search" opacity="0.2">
-                  <path
-                    id="Vector"
-                    d="M31.51 28.51H29.93L29.37 27.97C31.33 25.69 32.51 22.73 32.51 19.51C32.51 12.33 26.69 6.51001 19.51 6.51001C12.33 6.51001 6.51001 12.33 6.51001 19.51C6.51001 26.69 12.33 32.51 19.51 32.51C22.73 32.51 25.69 31.33 27.97 29.37L28.51 29.93V31.51L38.51 41.49L41.49 38.51L31.51 28.51ZM19.51 28.51C14.53 28.51 10.51 24.49 10.51 19.51C10.51 14.53 14.53 10.51 19.51 10.51C24.49 10.51 28.51 14.53 28.51 19.51C28.51 24.49 24.49 28.51 19.51 28.51Z"
-                    fill="black"
-                  />
-                </g>
-              </svg>
-              <input
-                placeholder="Search"
-                className=" text-black placeholder:font-bold w-[455px] font-bold text-[32px] outline-none"
-              ></input>
-            </div>
+            <Search />
             {/* Container */}
             <div className="bg-white/75 w-[50%] h-[812px] my-[50px] rounded-3xl z-10 backdrop-blur-md">
               {/* TitleDateandLocation*/}
               <div className="flex justify-start mt-5 relative">
                 <div className="mx-10 my-3 flex flex-col">
                   {/* Date */}
-                  <h5 className="text-[20px] text-black">September 10, 2021</h5>
+                  <Date />
                   {/* CityName */}
                   <h1 className="text-[48px] text-black">Tokyo</h1>
                 </div>
                 {/* LocationIcon */}
-                <div className=" absolute top-10 right-10">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g id="localization_icon">
-                      <path
-                        id="Vector 15"
-                        d="M18.4768 25.5772L23.1596 17.2151C26.2226 11.7453 22.2691 5 16 5C9.73095 5 5.77737 11.7453 8.84045 17.2151L13.5232 25.5772C14.6072 27.5128 17.3928 27.5128 18.4768 25.5772Z"
-                        stroke="#4B5563"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle
-                        id="Ellipse 20"
-                        cx="16"
-                        cy="13"
-                        r="2"
-                        stroke="#4B5563"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </g>
-                  </svg>
-                </div>
+                <LocationIcon />
               </div>
               {/* SunContainer */}
-              <div className="justify-center flex items-center">
-                <Image
-                  alt="Sun"
-                  decoding="async"
-                  srcSet={SunIcon}
-                  src={SunIcon}
-                  width={262}
-                  height={262}
-                  objectFit="cover"
-                />
-              </div>
+              <SunContainer />
               {/* degreesStatusContainer */}
               <div className="relative">
                 <h1 className="text-[144px] font-extrabold bg-gradient-to-b from-[#111827] to-[#6B7280] text-transparent ... bg-clip-text mx-10">
